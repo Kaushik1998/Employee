@@ -6,9 +6,9 @@ const tokenAuthenticate = require("../middleware/tokenAuthenticate");
 const jwt = require("jsonwebtoken");
 
 /* GET home page. */
-// router.get("/", function (req, res, next) {
-//   res.send("This is homepage");
-// });
+router.get("/*", function (req, res, next) {
+    res.sendFile(path.join(__dirname + "dist/Employee/index.html"));
+});
 
 router.route("/register").post(register);
 
