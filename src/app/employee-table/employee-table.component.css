@@ -1,0 +1,9 @@
+table {
+  width: 100%;
+}
+/* .mat-table:nth-child(n + 2) {
+  background-color: silver;
+} */
+tr:nth-child(odd) {
+  background-color: silver !important;
+}

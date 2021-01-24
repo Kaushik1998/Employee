@@ -1,0 +1,12 @@
+.highlight {
+  background-color: #673ab7;
+}
+.mat-card {
+  width: 100%;
+  margin: 3%;
+  border: slateblue solid 3px;
+}
+
+.container {
+  margin: 5% 10%;
+}

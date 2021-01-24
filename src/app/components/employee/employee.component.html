@@ -1,0 +1,62 @@
+<mat-grid-list cols="2" rowHeight="2:1" class="container">
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title class="mat-headline">Employee from State</mat-card-title>
+      <mat-card-content *ngIf="employeeFromState">
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            ID : {{ employeeFromState.id }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item appHighlight role="listitem"
+            >Name : {{ employeeFromState.employee_name }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item role="listitem" class="mat-primary">
+            Salary : {{ employeeFromState.employee_salary | currency }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item role="listitem">
+            Age : {{ employeeFromState.employee_age | age }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title class="mat-headline">Employee from Api</mat-card-title>
+      <mat-card-content *ngIf="employeeFromApi != null">
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            ID : {{ employeeFromApi.id }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item appHighlight role="listitem"
+            >Name : {{ employeeFromApi.employee_name }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item role="listitem">
+            Salary :
+            {{ employeeFromApi.employee_salary | currency }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+          <mat-list-item role="listitem">
+            Age : {{ employeeFromApi.employee_age | age }}
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
