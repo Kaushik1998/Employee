@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 };
 
-export const myServerUrl = '';
+export const myServerUrl = 'http://localhost:3000';
 
 export const testApi = 'http://dummy.restapiexample.com/api/v1';
 
