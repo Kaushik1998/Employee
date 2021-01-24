@@ -1,7 +1,6 @@
-import { Observable } from 'rxjs';
-import { testApi } from './../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class DummyApiService {
   constructor(private http: HttpClient) {}
 
-  readonly url: string = testApi;
+  readonly url: string = 'http://dummy.restapiexample.com/api/v1';
 
   getEmployees() {
     return new Observable((data) => {

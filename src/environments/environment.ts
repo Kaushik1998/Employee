@@ -6,9 +6,6 @@ export const environment = {
   production: false,
 };
 
-export const myServerUrl = '';
-
-export const testApi = 'http://dummy.restapiexample.com/api/v1';
 
 /*
  * For easier debugging in development mode, you can import the following file
