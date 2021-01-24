@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class DummyApiService {
   constructor(private http: HttpClient) {}
 
-  readonly url: string = 'http://dummy.restapiexample.com/api/v1';
+  readonly url: string = 'https://dummy.restapiexample.com/api/v1';
 
   getEmployees() {
     return new Observable((data) => {
