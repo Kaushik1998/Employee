@@ -12,6 +12,12 @@
   },
   "private": true,
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.1",
     "@angular/animations": "~9.1.12",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.12",
