@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  readonly url: string = myServerUrl;
+  readonly url: string = '';
   constructor(private http: HttpClient, private storage: LocalStorageService) {}
 
   getUrl(): string {
