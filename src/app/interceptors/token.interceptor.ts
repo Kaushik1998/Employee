@@ -1,13 +1,11 @@
-import { myServerUrl } from './../../environments/environment';
-import { LocalStorageService } from '../services/local-storage/local-storage.service';
-import { Injectable } from '@angular/core';
 import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
+  HttpEvent, HttpHandler,
+
+  HttpInterceptor, HttpRequest
 } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LocalStorageService } from '../services/local-storage/local-storage.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -17,7 +15,7 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    if (request.url == `${myServerUrl}/token`) {
+    if (request.url == `/token`) {
       const modifiedReq = request.clone({
         headers: request.headers.set(
           'Authorization',
