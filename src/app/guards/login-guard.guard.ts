@@ -1,3 +1,4 @@
+import { NotifierService } from './../services/notifier.service';
 import { LocalStorageService } from '../services/local-storage/local-storage.service';
 import { Injectable } from '@angular/core';
 import {
@@ -17,7 +18,7 @@ export class LoginGuardGuard implements CanActivate {
   constructor(
     private _storage: LocalStorageService,
     private _router: Router,
-    private _snackBar: MatSnackBar
+    private _snackBar: NotifierService
   ) {}
 
   canActivate(
@@ -30,7 +31,7 @@ export class LoginGuardGuard implements CanActivate {
     | UrlTree {
     if (this._storage.getToken()) {
       this._router.navigate(['/table']);
-      this._snackBar.open('Already logged in', 'Close', { duration: 2000 });
+      this._snackBar.notify('Already logged in');
       return false;
     } else {
       return true;

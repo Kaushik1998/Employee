@@ -1,14 +1,14 @@
-import { LocalStorageService } from '../services/local-storage/local-storage.service';
-import { ApiService } from '../services/api/api.service';
 import { Injectable } from '@angular/core';
 import {
-  CanActivate,
   ActivatedRouteSnapshot,
+  CanActivate,
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiService } from '../services/api/api.service';
+import { LocalStorageService } from '../services/local-storage/local-storage.service';
+import { NotifierService } from './../services/notifier.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +16,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class TableGuard implements CanActivate {
   constructor(
     private api: ApiService,
-    private storage: LocalStorageService,
-    private _snackBar: MatSnackBar
+    private _notifier: NotifierService
   ) {}
 
   canActivate(
@@ -31,12 +30,12 @@ export class TableGuard implements CanActivate {
     return new Observable((data) => {
       this.api.validateToken().subscribe(
         (success) => {
-          this._snackBar.open('Access Granted.', 'Close', { duration: 2000 });
+          this._notifier.notify('Access Granted.');
           data.next(true);
         },
         (error) => {
           console.log(error);
-          this._snackBar.open('Access Denied.', 'Close', { duration: 5000 });
+          this._notifier.notify('Access Denied.');
           data.next(false);
         }
       );

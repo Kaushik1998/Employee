@@ -32,7 +32,6 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.id = +params['id']; // (+) converts string 'id' to a number
-      console.log(this.id);
       this.dummy.getEmployee(this.id).subscribe((employee: any) => {
         this.employeeFromApi = employee.data;
       });
